@@ -2,9 +2,9 @@ import React from "react";
 import {  StyleSheet, View, Text, SafeAreaView } from "react-native";
 import Header from "./components/Header";
 import SearhFilter from "./components/SearchFilter";
-import { BottomNavigator } from "./Bottom";
+import { BottomNavigator } from "./navigation/BottomNavigator";
 
-function Home (){
+function HomeScreen (){
     return(
             <SafeAreaView  style={{ flex:1, marginHorizontal:16 }}> 
             {/*render Header */}
@@ -15,11 +15,10 @@ function Home (){
               <Text>To display recipes Click on "Search recipe"</Text>
               </View>
               {/*Bottom*/}
-              <BottomNavigator Bottom ="tab navigation"/>
             </SafeAreaView>
     )
 };
-export default Home ()
+export default HomeScreen ()
 
 const styles=StyleSheet.create({
   sentence:{

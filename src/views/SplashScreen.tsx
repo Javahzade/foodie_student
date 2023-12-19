@@ -3,7 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
 
 
-function HomeScreen() {
+function SplashScreen() {
   const navigation = useNavigation();
   const gotoDetails = () => {
   navigation.navigate('WelcomeScreen')
@@ -20,7 +20,7 @@ return (
   </View>
 )
 }
-export default HomeScreen
+export default SplashScreen
 
 const styles= StyleSheet.create({
   main:{

@@ -1,17 +1,18 @@
 import React from "react";
 import {Image} from 'react-native'
-import { createBottomTabNavigator } from "@react navigation/bottom-tabs";
+import HomeScreen from "../HomeScreen";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Bottom = createBottomTabNavigator();
 
 export const BottomNavigator= () => {
     return(
-        <BottomNavigator screenOptions ={{headerShown:false}}>
+        <Bottom.Navigator   screenOptions ={{headerShown:false } }initialRouteName={'Home'}  >
             <Bottom.Screen options ={{
                 tabBarIcons:()=> <Image source={require('../assets/icons/home.svg')}/>, 
                 tabBarShowLabel:false, }} 
-                name ="Home" component= {HomeView}/>
-            <Bottom.Screen options ={{
+                name ="Home" component= {HomeScreen}/>
+            {/* <Bottom.Screen options ={{
                 tabBarIcons:()=> <Image source={require('../assets/icons/bookmark.svg')}/>, 
                 tabBarShowLabel:false, }} 
                 name ="Bookmark" component= {HomeView}/>
@@ -26,7 +27,7 @@ export const BottomNavigator= () => {
             <Bottom.Screen options ={{
                 tabBarIcons:()=> <Image source={require('../assets/icons/person.svg')}/>, 
                 tabBarShowLabel:false, }} 
-                name ="Person" component= {HomeView}/>
-        </BottomNavigator>        
+                name ="Person" component= {HomeView}/> */}
+        </Bottom.Navigator>        
     )
 }
