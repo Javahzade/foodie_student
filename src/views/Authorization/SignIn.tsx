@@ -1,16 +1,18 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { TextInput, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 // import time from '../../assets'
 
-export const Signin=()=>{
+export const SignIn=()=>{
 
-    // const navigation=useNavigation();
+    // const navigation = useNavigation();
 
-    // const handleSignUp=(): void=>{
+    // const handleSignUp = (): void => {
+    //     navigation.navigate('SignUp')
     // }
+
 
   return(
     <SafeAreaView style={styles.area}>
@@ -38,6 +40,7 @@ export const Signin=()=>{
         <TextInput placeholder="Enter Password" secureTextEntry style={styles.input}/>
         <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Sign In</Text>
+            {/* <Image style={styles.button1} source={require("../../assets/icons/arrow_forward")}/> */}
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button, {backgroundColor:"transparent"}]}>
             <View style={styles.buttonText}>
@@ -51,7 +54,7 @@ export const Signin=()=>{
     </SafeAreaView>
   )
 }
-export default Signin
+// export default SignIn
 
 const styles = StyleSheet.create({
     area:{
@@ -106,6 +109,9 @@ const styles = StyleSheet.create({
         color:"white",
         fontSize:16,
         flexDirection:"row",
+    },
+    button1:{
+
     },
     buttonText1:{
 
