@@ -7,11 +7,11 @@ import { Image, StyleSheet, Text, View } from "react-native";
 
 export const SignUp=()=>{
 
-    // const navigation = useNavigation();
+    const navigation = useNavigation();
 
-    // const handleSignIn = (): void => {
-    //     navigation.navigate('SignIn')
-    // }
+    const handleSignIn = (): void => {
+        navigation.navigate('SignIn')
+    }
 
   return(
     <SafeAreaView style={styles.areas}>
@@ -28,14 +28,28 @@ export const SignUp=()=>{
             <Text style={styles.Texts2}>Let’s help you set up your account</Text>
             <Text style={styles.Texts2}>it won’t take long.</Text>
         </View>
-        <TextInput placeholder="Enter Name" style={styles.inputs}/>
-        <TextInput placeholder="Enter Email" autoCapitalize="none" style={styles.inputs}/>
-        <TextInput placeholder="Enter Password" secureTextEntry style={styles.inputs}/>
-        <TextInput placeholder="Retype Password" secureTextEntry style={styles.inputs}/>
-        <TouchableOpacity style={styles.buttons}>
-            <Text style={styles.buttonTexts}>Sign Up</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.buttons, {backgroundColor:"transparent"}]}>
+        <View style={styles.screen1}>
+            <Text style={styles.name}>Name</Text>
+            <View style={styles.views}>
+                <TextInput placeholder="Enter Name" style={styles.inputs}/>
+            </View>
+            <Text style={styles.name}>Email</Text>
+            <View style={styles.views}>
+                <TextInput placeholder="Enter Email" autoCapitalize="none" style={styles.inputs}/>
+            </View>
+            <Text style={styles.name}>Password</Text>
+            <View style={styles.views}>
+                <TextInput placeholder="Enter Password" secureTextEntry style={styles.inputs}/>
+            </View>
+            <Text style={styles.name}>Confirm Password</Text>
+            <View style={styles.views}>
+                <TextInput placeholder="Retype Password" secureTextEntry style={styles.inputs}/>
+            </View>
+            <TouchableOpacity style={styles.buttons}>
+                <Text style={styles.buttonTexts}>Sign Up</Text>
+            </TouchableOpacity>
+        </View>
+        <TouchableOpacity onPress={handleSignIn} style={[styles.buttons, {backgroundColor:"transparent"}]}>
             <View style={styles.buttonTexts}>
                 <Text style={[styles.buttonTexts1, {color:"black"}]}>Already a member?</Text>
                 <Text style={[styles.buttonTexts2, {color:"orange"}]}>  Sign In</Text>
@@ -68,26 +82,38 @@ const styles = StyleSheet.create({
         alignItems:"flex-start"
     },
     Texts1:{
-        fontSize:30,
-        lineHeight:45,
+        fontSize:20,
+        lineHeight:30,
         fontWeight:"600",
         color:"#000000"
     },
     Texts2:{
-        fontSize:20,
+        fontSize:11,
         fontWeight:"400",
-        lineHeight:30,
+        lineHeight:16.5,
         color:"#121212"
+    },
+    screen1:{
+        justifyContent:"center",
+        flex:1
+    },
+    name:{
+        fontSize:16,
+        color:"#121212",
+        marginBottom:8
     },
     inputs:{
         flex:1,
         justifyContent:"center",
-        height:48,
+        // height:48,
         borderRadius:10,
         borderWidth:1,
         borderColor:"#129575",
         marginBottom:16,
         paddingHorizontal:10
+    },
+    views:{
+        height:"15%"
     },
     buttons:{
         backgroundColor:"#129575",
@@ -95,7 +121,8 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         borderRadius:10,
-        marginBottom:16
+        marginBottom:16,
+        marginTop:15
     },
     buttonTexts:{
         fontWeight:"bold",

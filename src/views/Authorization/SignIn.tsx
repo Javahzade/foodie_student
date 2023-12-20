@@ -7,11 +7,11 @@ import { Image, StyleSheet, Text, View } from "react-native";
 
 export const SignIn=()=>{
 
-    // const navigation = useNavigation();
+    const navigation = useNavigation();
 
-    // const handleSignUp = (): void => {
-    //     navigation.navigate('SignUp')
-    // }
+    const handleSignUp = (): void => {
+        navigation.navigate('SignUp')
+    }
 
 
   return(
@@ -36,13 +36,22 @@ export const SignIn=()=>{
             <Text style={styles.dontaccount}>Don’t have an account?</Text>
             <Text style={styles.signUp}>  Sign up</Text>
         </View>  */}
-        <TextInput placeholder="Email" autoCapitalize="none" style={styles.input}/>
-        <TextInput placeholder="Enter Password" secureTextEntry style={styles.input}/>
-        <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Sign In</Text>
+        <View style={styles.screen}>
+            <Text style={styles.email}>Email</Text>
+            <View style={styles.view}>
+                <TextInput placeholder="Enter Email" autoCapitalize="none" style={styles.input}/> 
+            </View>
+            <Text style={styles.password}>Enter Password</Text>
+            <View style={styles.view}>
+                <TextInput placeholder="Enter Password" secureTextEntry style={styles.input}/>
+            </View>
+            <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Sign In</Text>
             {/* <Image style={styles.button1} source={require("../../assets/icons/arrow_forward")}/> */}
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, {backgroundColor:"transparent"}]}>
+            </TouchableOpacity>
+        </View>
+        
+        <TouchableOpacity onPress={handleSignUp} style={[styles.button, {backgroundColor:"transparent"}]}>
             <View style={styles.buttonText}>
                 <Text style={[styles.buttonText1, {color:"black"}]}>Don’t have an account?</Text>
                 <Text style={[styles.buttonText2, {color:"orange"}]}>  Sign Up</Text>
@@ -86,19 +95,38 @@ const styles = StyleSheet.create({
         lineHeight:30,
         color:"#121212"
     },
+    screen:{
+        justifyContent:"center",
+        flex:1
+    },
+    email:{
+        fontSize:16,
+        color:"#121212",
+        marginBottom:8
+    },
+    password:{
+        fontSize:16,
+        color:"#121212",
+        marginBottom:8
+    },
     input:{
         flex:1,
         justifyContent:"center",
-        height:48,
+        width:'100%',
+        // height:"10%",
         borderRadius:10,
         borderWidth:1,
         borderColor:"#129575",
         marginBottom:16,
-        paddingHorizontal:10
+        paddingHorizontal:10  
+    },
+    view:{
+       height:"15%"
     },
     button:{
         backgroundColor:"#129575",
-        height:48,
+        marginTop:15,
+        height:"15%",
         justifyContent:"center",
         alignItems:"center",
         borderRadius:10,
