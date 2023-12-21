@@ -8,15 +8,11 @@ function SearhFilter(){
             <Text>Search recipe</Text>
             <Image source= {require('../src/assets/icons/search.svg')}/>
         </View>
-        <View style={styles.click}>
-            <Image></Image>
-            </View>
-                
-            
+
     );
 };
 
-export default SearhFilter ;
+export default SearhFilter
 
 const styles = StyleSheet.create({
     button:{

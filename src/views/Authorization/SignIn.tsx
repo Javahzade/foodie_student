@@ -12,6 +12,9 @@ export const SignIn = () => {
         navigation.navigate('SignUp')
     }
 
+    const handleSignIn = () => {
+        navigation.navigate('TabNavigator')
+    }
 
     return (
         <SafeAreaView style={styles.area}>
@@ -44,7 +47,7 @@ export const SignIn = () => {
                 <View style={styles.view}>
                     <TextInput placeholder="Enter Password" secureTextEntry style={styles.input} />
                 </View>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={handleSignIn}>
                     <Text style={styles.buttonText}>Sign In</Text>
                     {/* <Image style={styles.button1} source={require("../../assets/icons/arrow_forward")}/> */}
                 </TouchableOpacity>
