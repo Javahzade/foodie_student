@@ -1,11 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-// import WelcomeScreen from './views/WelcomeScreen';
 import { SignIn } from './views/Authorization/SignIn';
 import { SignUp } from './views/Authorization/SignUp';
-// import SplashScreen from './views/SplashScreen';
-// import HomeScreen from './HomeScreen';
 import { BottomNavigator } from './navigation/BottomNavigator';
 
 
