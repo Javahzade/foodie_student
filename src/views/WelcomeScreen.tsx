@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, View, TouchableOpacity, ImageBackground, Image, Text } from 'react-native';
-import ArrowRightIcon from '../assets/icons/arrowRightIcon.svg'
+import ArrowRightIcon from '../assets/icons/ArrowRightIcon.svg'
 import LogoIcon from '../assets/icons/LogoIcon.svg'
 
 function WelcomeScreen() {

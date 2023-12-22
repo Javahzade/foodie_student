@@ -3,6 +3,7 @@ import React from "react";
 import { TextInput, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Image, StyleSheet, Text, View } from "react-native";
+// import auth from '@react-native-firebase/auth';
 
 const SignUp = () => {
 
@@ -10,6 +11,28 @@ const SignUp = () => {
 
     const handleSignIn = (): void => {
         navigation.navigate('SignIn')
+    }
+
+    const handleSignUp = () => {
+        navigation.navigate('TabNavigator')
+        // auth()
+        //     .createUserWithEmailAndPassword(
+        //         'jane.doe@example.com', 
+        //         'SuperSecretPassword!')
+        //     .then(() => {
+        //         console.log('User account created & signed in!');
+        //     })
+        //     .catch(error => {
+        //         if (error.code === 'auth/email-already-in-use') {
+        //             console.log('That email address is already in use!');
+        //         }
+
+        //         if (error.code === 'auth/invalid-email') {
+        //             console.log('That email address is invalid!');
+        //         }
+
+        //         console.error(error);
+        // });
     }
 
     return (
@@ -28,10 +51,10 @@ const SignUp = () => {
                 <Text style={styles.Texts2}>it won’t take long.</Text>
             </View>
             <View style={styles.screen1}>
-                <Text style={styles.name}>Name</Text>
+                {/* <Text style={styles.name}>Name</Text>
                 <View style={styles.views}>
                     <TextInput placeholder="Enter Name" style={styles.inputs} />
-                </View>
+                </View> */}
                 <Text style={styles.name}>Email</Text>
                 <View style={styles.views}>
                     <TextInput placeholder="Enter Email" autoCapitalize="none" style={styles.inputs} />
@@ -40,11 +63,11 @@ const SignUp = () => {
                 <View style={styles.views}>
                     <TextInput placeholder="Enter Password" secureTextEntry style={styles.inputs} />
                 </View>
-                <Text style={styles.name}>Confirm Password</Text>
+                {/* <Text style={styles.name}>Confirm Password</Text>
                 <View style={styles.views}>
                     <TextInput placeholder="Retype Password" secureTextEntry style={styles.inputs} />
-                </View>
-                <TouchableOpacity style={styles.buttons}>
+                </View> */}
+                <TouchableOpacity style={styles.buttons} onPress={handleSignUp}>
                     <Text style={styles.buttonTexts}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
@@ -86,6 +109,7 @@ const styles = StyleSheet.create({
         color: "#121212"
     },
     screen1: {
+        top:25,
         justifyContent: "center",
         flex: 1
     },
@@ -105,7 +129,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10
     },
     views: {
-        height: "15%"
+        height: 60
     },
     buttons: {
         backgroundColor: "#129575",

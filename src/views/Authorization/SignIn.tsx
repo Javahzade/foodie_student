@@ -3,6 +3,8 @@ import React from "react";
 import { TextInput, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Image, StyleSheet, Text, View } from "react-native";
+// import auth from '@react-native-firebase/auth';
+
 
 export const SignIn = () => {
 
@@ -14,6 +16,24 @@ export const SignIn = () => {
 
     const handleSignIn = () => {
         navigation.navigate('TabNavigator')
+        // auth()
+        //     .signInWithEmailAndPassword(
+        //         'jane.doe@example.com', 
+        //         'SuperSecretPassword!')
+        //     .then(() => {
+        //         console.log('User account created & signed in!');
+        //     })
+        //     .catch(error => {
+        //         if (error.code === 'auth/email-already-in-use') {
+        //             console.log('That email address is already in use!');
+        //         }
+
+        //         if (error.code === 'auth/invalid-email') {
+        //             console.log('That email address is invalid!');
+        //         }
+
+        //         console.error(error);
+        // });
     }
 
     return (
@@ -81,6 +101,7 @@ const styles = StyleSheet.create({
     //     justifyContent:"space-between"
     // },
     Text: {
+        // flex:0.2,
         marginTop: 50,
         justifyContent: "center",
         alignItems: "flex-start"
@@ -98,6 +119,7 @@ const styles = StyleSheet.create({
         color: "#121212"
     },
     screen: {
+        top:25,
         justifyContent: "center",
         flex: 1
     },
@@ -112,23 +134,23 @@ const styles = StyleSheet.create({
         marginBottom: 8
     },
     input: {
-        flex: 1,
+        flex:1,
         justifyContent: "center",
-        width: '100%',
-        // height:"10%",
+        // width: '100%',
         borderRadius: 10,
         borderWidth: 1,
+        haight:60,
         borderColor: "#129575",
         marginBottom: 16,
         paddingHorizontal: 10
     },
     view: {
-        height: "15%"
+        height: 60
     },
     button: {
         backgroundColor: "#129575",
         marginTop: 15,
-        height: "15%",
+        height: 60,
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 10,
@@ -138,7 +160,19 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         color: "white",
         fontSize: 16,
+        lineHeight:16.5,
+        height:17,
         flexDirection: "row",
     },
+    buttonText1:{
+
+    },
+    buttonText2:{
+
+    },
+    homeindicator:{
+        justifyContent:"center",
+        alignItems:"center"
+    }
 }
 )
